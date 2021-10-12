@@ -1,0 +1,40 @@
+C:\proyectos\mensajero\CsDatos\bin\Debug\CsDatos.dll.config
+C:\proyectos\mensajero\CsDatos\bin\Debug\CsDatos.dll
+C:\proyectos\mensajero\CsDatos\bin\Debug\CsDatos.pdb
+C:\proyectos\mensajero\CsDatos\obj\Debug\CsDatos.dll
+C:\proyectos\mensajero\CsDatos\obj\Debug\CsDatos.pdb
+C:\proyectos\mensajero\CsDatos\obj\Debug\CsDatos.csprojResolveAssemblyReference.cache
+D:\PROYECTOS\MENSAJERO\mensajero\CsDatos\bin\Debug\CsDatos.dll.config
+D:\PROYECTOS\MENSAJERO\mensajero\CsDatos\bin\Debug\CsDatos.dll
+D:\PROYECTOS\MENSAJERO\mensajero\CsDatos\bin\Debug\CsDatos.pdb
+D:\PROYECTOS\MENSAJERO\mensajero\CsDatos\obj\Debug\CsDatos.dll
+D:\PROYECTOS\MENSAJERO\mensajero\CsDatos\obj\Debug\CsDatos.pdb
+C:\MENSAJERO_git\mensajero\CsDatos\bin\Debug\CsDatos.dll.config
+C:\MENSAJERO_git\mensajero\CsDatos\bin\Debug\CsDatos.dll
+C:\MENSAJERO_git\mensajero\CsDatos\bin\Debug\CsDatos.pdb
+C:\MENSAJERO_git\mensajero\CsDatos\obj\Debug\CsDatos.csprojResolveAssemblyReference.cache
+C:\MENSAJERO_git\mensajero\CsDatos\obj\Debug\CsDatos.dll
+C:\MENSAJERO_git\mensajero\CsDatos\obj\Debug\CsDatos.pdb
+D:\PROYECTOS\MENSAJERO\mensajero\CsDatos\obj\Debug\CsDatos.csprojResolveAssemblyReference.cache
+C:\PROYECTOS\MENSAJERO\mensajero\CsDatos\bin\Debug\CsDatos.dll.config
+C:\PROYECTOS\MENSAJERO\mensajero\CsDatos\bin\Debug\CsDatos.dll
+C:\PROYECTOS\MENSAJERO\mensajero\CsDatos\bin\Debug\CsDatos.pdb
+C:\PROYECTOS\MENSAJERO\mensajero\CsDatos\obj\Debug\CsDatos.dll
+C:\PROYECTOS\MENSAJERO\mensajero\CsDatos\obj\Debug\CsDatos.pdb
+C:\PROYECTOS\MENSAJERO\mensajero\CsDatos\obj\Debug\CsDatos.csprojResolveAssemblyReference.cache
+C:\PROYECTOS\MENSAJERO\mensajero_master\mensajero\CsDatos\bin\Debug\CsDatos.dll.config
+C:\PROYECTOS\MENSAJERO\mensajero_master\mensajero\CsDatos\bin\Debug\CsDatos.dll
+C:\PROYECTOS\MENSAJERO\mensajero_master\mensajero\CsDatos\bin\Debug\CsDatos.pdb
+C:\PROYECTOS\MENSAJERO\mensajero_master\mensajero\CsDatos\obj\Debug\CsDatos.dll
+C:\PROYECTOS\MENSAJERO\mensajero_master\mensajero\CsDatos\obj\Debug\CsDatos.pdb
+C:\PROYECTOS\MENSAJERO\mensajero_master\mensajero\CsDatos\obj\Debug\CsDatos.csprojResolveAssemblyReference.cache
+C:\PROYECTOS\EXPORTADORFACTURAS\exportadorfacturas\CsDatos\bin\Debug\CsDatos.dll.config
+C:\PROYECTOS\EXPORTADORFACTURAS\exportadorfacturas\CsDatos\bin\Debug\CsDatos.dll
+C:\PROYECTOS\EXPORTADORFACTURAS\exportadorfacturas\CsDatos\bin\Debug\CsDatos.pdb
+C:\PROYECTOS\EXPORTADORFACTURAS\exportadorfacturas\CsDatos\obj\Debug\CsDatos.dll
+C:\PROYECTOS\EXPORTADORFACTURAS\exportadorfacturas\CsDatos\obj\Debug\CsDatos.pdb
+C:\PROYECTOS\EXPORTADORFACTURAS\exportadorfacturas - copia\CsDatos\bin\Debug\CsDatos.dll.config
+C:\PROYECTOS\EXPORTADORFACTURAS\exportadorfacturas - copia\CsDatos\bin\Debug\CsDatos.dll
+C:\PROYECTOS\EXPORTADORFACTURAS\exportadorfacturas - copia\CsDatos\bin\Debug\CsDatos.pdb
+C:\PROYECTOS\EXPORTADORFACTURAS\exportadorfacturas - copia\CsDatos\obj\Debug\CsDatos.dll
+C:\PROYECTOS\EXPORTADORFACTURAS\exportadorfacturas - copia\CsDatos\obj\Debug\CsDatos.pdb

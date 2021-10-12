@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/FacturanteMVC.API" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FacturanteMVC.API" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://testing.facturante.com/api/Comprobantes.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" />
+  <xs:import schemaLocation="http://testing.facturante.com/api/Comprobantes.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/FacturanteModel" />
+  <xs:import schemaLocation="http://testing.facturante.com/api/Comprobantes.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/FacturanteModel.API.DTOs" />
+  <xs:complexType name="ListadoComprobantesRequest">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Autenticacion" nillable="true" type="q1:Autenticacion" />
+      <xs:element minOccurs="0" name="CUIT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstadoComprobante" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FechaDesde" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaHasta" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdComprobante" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NroPagina" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TipoComprobante" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListadoComprobantesRequest" nillable="true" type="tns:ListadoComprobantesRequest" />
+  <xs:complexType name="ListadoComprobantesResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="ListadoComprobantes" nillable="true" type="q2:ArrayOfComprobante" />
+          <xs:element minOccurs="0" name="PaginaActual" type="xs:int" />
+          <xs:element minOccurs="0" name="TotalComprobantes" type="xs:int" />
+          <xs:element minOccurs="0" name="TotalPaginas" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ListadoComprobantesResponse" nillable="true" type="tns:ListadoComprobantesResponse" />
+  <xs:complexType name="ResponseBase">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/FacturanteModel" minOccurs="0" name="Codigo" type="q3:Constantes.CodigoRespuesta" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/FacturanteModel" minOccurs="0" name="Estado" type="q4:Constantes.EstadoRespuesta" />
+      <xs:element minOccurs="0" name="Mensaje" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseBase" nillable="true" type="tns:ResponseBase" />
+  <xs:complexType name="ListadoComprobantesFullRequest">
+    <xs:sequence>
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Autenticacion" nillable="true" type="q5:Autenticacion" />
+      <xs:element minOccurs="0" name="CUIT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CantidadComprobantesPorPagina" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="EstadoComprobante" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FechaDesde" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaHasta" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdComprobante" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NroPagina" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TipoComprobante" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListadoComprobantesFullRequest" nillable="true" type="tns:ListadoComprobantesFullRequest" />
+  <xs:complexType name="ListadoComprobantesFullResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="ListadoComprobantes" nillable="true" type="q6:ArrayOfComprobante" />
+          <xs:element minOccurs="0" name="PaginaActual" type="xs:int" />
+          <xs:element minOccurs="0" name="TotalComprobantes" type="xs:int" />
+          <xs:element minOccurs="0" name="TotalPaginas" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ListadoComprobantesFullResponse" nillable="true" type="tns:ListadoComprobantesFullResponse" />
+  <xs:complexType name="ListadoRemitosRequest">
+    <xs:sequence>
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Autenticacion" nillable="true" type="q7:Autenticacion" />
+      <xs:element minOccurs="0" name="CUIT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstadoComprobante" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FechaDesde" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaHasta" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdRemito" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NroPagina" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Order" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListadoRemitosRequest" nillable="true" type="tns:ListadoRemitosRequest" />
+  <xs:complexType name="ListadoRemitosResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBaseV2">
+        <xs:sequence>
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/FacturanteModel.API.DTOs" minOccurs="0" name="ListadoRemitos" nillable="true" type="q8:ArrayOfRemito" />
+          <xs:element minOccurs="0" name="PaginaActual" type="xs:int" />
+          <xs:element minOccurs="0" name="TotalPaginas" type="xs:int" />
+          <xs:element minOccurs="0" name="TotalRemitos" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ListadoRemitosResponse" nillable="true" type="tns:ListadoRemitosResponse" />
+  <xs:complexType name="ResponseBaseV2">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Codigo" type="xs:int" />
+      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/FacturanteModel" minOccurs="0" name="Estado" type="q9:Constantes.EstadoRespuesta" />
+      <xs:element minOccurs="0" name="Mensaje" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseBaseV2" nillable="true" type="tns:ResponseBaseV2" />
+  <xs:complexType name="DetalleComprobanteRequest">
+    <xs:sequence>
+      <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Autenticacion" nillable="true" type="q10:Autenticacion" />
+      <xs:element minOccurs="0" name="IdComprobante" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DetalleComprobanteRequest" nillable="true" type="tns:DetalleComprobanteRequest" />
+  <xs:complexType name="DetalleComprobanteResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Comprobante" nillable="true" type="q11:DetalleComprobante" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DetalleComprobanteResponse" nillable="true" type="tns:DetalleComprobanteResponse" />
+  <xs:complexType name="DetalleRemitoRequest">
+    <xs:sequence>
+      <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Autenticacion" nillable="true" type="q12:Autenticacion" />
+      <xs:element minOccurs="0" name="IdRemito" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DetalleRemitoRequest" nillable="true" type="tns:DetalleRemitoRequest" />
+  <xs:complexType name="DetalleRemitoResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBaseV2">
+        <xs:sequence>
+          <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/FacturanteModel.API.DTOs" minOccurs="0" name="Remito" nillable="true" type="q13:Remito" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DetalleRemitoResponse" nillable="true" type="tns:DetalleRemitoResponse" />
+  <xs:complexType name="CrearComprobanteRemitoRequest">
+    <xs:sequence>
+      <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Autenticacion" nillable="true" type="q14:Autenticacion" />
+      <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Cliente" nillable="true" type="q15:RemitoCliente" />
+      <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Encabezado" nillable="true" type="q16:RemitoEncabezado" />
+      <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Items" nillable="true" type="q17:ArrayOfRemitoItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CrearComprobanteRemitoRequest" nillable="true" type="tns:CrearComprobanteRemitoRequest" />
+  <xs:complexType name="CrearComprobanteSinImpuestosRequest">
+    <xs:sequence>
+      <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Autenticacion" nillable="true" type="q18:Autenticacion" />
+      <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Cliente" nillable="true" type="q19:ClienteSinImpuestos" />
+      <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Encabezado" nillable="true" type="q20:ComprobanteEncabezadoSinImpuestos" />
+      <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Items" nillable="true" type="q21:ArrayOfComprobanteItemSinImpuestos" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CrearComprobanteSinImpuestosRequest" nillable="true" type="tns:CrearComprobanteSinImpuestosRequest" />
+  <xs:complexType name="CrearComprobanteResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IdComprobante" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CrearComprobanteResponse" nillable="true" type="tns:CrearComprobanteResponse" />
+  <xs:complexType name="CrearComprobanteSinImpuestosMtxRequest">
+    <xs:sequence>
+      <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Autenticacion" nillable="true" type="q22:Autenticacion" />
+      <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Cliente" nillable="true" type="q23:ClienteSinImpuestos" />
+      <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Encabezado" nillable="true" type="q24:ComprobanteEncabezadoSinImpuestos" />
+      <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Items" nillable="true" type="q25:ArrayOfComprobanteItemSinImpuestosMtx" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CrearComprobanteSinImpuestosMtxRequest" nillable="true" type="tns:CrearComprobanteSinImpuestosMtxRequest" />
+  <xs:complexType name="CalcularPercepcionesRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CUITEmisor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CUITReceptor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IVA" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Provincia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubtotalNeto" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CalcularPercepcionesRequest" nillable="true" type="tns:CalcularPercepcionesRequest" />
+  <xs:complexType name="CalcularPercepcionesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AlicuotaPercepcionIIBB" type="xs:decimal" />
+      <xs:element minOccurs="0" name="AlicuotaPercepcionIVA" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SubtotalPercepcionIIBB" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SubtotalPercepcionIVA" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CalcularPercepcionesResponse" nillable="true" type="tns:CalcularPercepcionesResponse" />
+  <xs:complexType name="CrearComprobanteConPercepcionesRequest">
+    <xs:sequence>
+      <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Autenticacion" nillable="true" type="q26:Autenticacion" />
+      <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Cliente" nillable="true" type="q27:ClienteConPercepciones" />
+      <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Encabezado" nillable="true" type="q28:ComprobanteEncabezadoConPercepciones" />
+      <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Items" nillable="true" type="q29:ArrayOfComprobanteItemConPercepciones" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CrearComprobanteConPercepcionesRequest" nillable="true" type="tns:CrearComprobanteConPercepcionesRequest" />
+  <xs:complexType name="CrearComprobanteFullRequest">
+    <xs:sequence>
+      <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Autenticacion" nillable="true" type="q30:Autenticacion" />
+      <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Cliente" nillable="true" type="q31:ClienteFull" />
+      <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Encabezado" nillable="true" type="q32:ComprobanteEncabezadoFull" />
+      <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="HanditAdServeItems" nillable="true" type="q33:ArrayOfHanditAdServeItem" />
+      <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Items" nillable="true" type="q34:ArrayOfComprobanteItemFull" />
+      <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="ItemsPdf" nillable="true" type="q35:ArrayOfComprobanteItemFull" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CrearComprobanteFullRequest" nillable="true" type="tns:CrearComprobanteFullRequest" />
+  <xs:complexType name="CrearComprobanteIdTributoRequest">
+    <xs:sequence>
+      <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Autenticacion" nillable="true" type="q36:Autenticacion" />
+      <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Factura" nillable="true" type="q37:ComprobanteEncabezadoIdTributo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CrearComprobanteIdTributoRequest" nillable="true" type="tns:CrearComprobanteIdTributoRequest" />
+  <xs:complexType name="CrearComprobanteRequest">
+    <xs:sequence>
+      <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Autenticacion" nillable="true" type="q38:Autenticacion" />
+      <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Cliente" nillable="true" type="q39:Cliente" />
+      <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Encabezado" nillable="true" type="q40:ComprobanteEncabezado" />
+      <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Items" nillable="true" type="q41:ArrayOfComprobanteItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CrearComprobanteRequest" nillable="true" type="tns:CrearComprobanteRequest" />
+  <xs:complexType name="CrearEmpresaRequest">
+    <xs:sequence>
+      <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Autenticacion" nillable="true" type="q42:AutenticacionReseller" />
+      <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Empresa" nillable="true" type="q43:Empresa" />
+      <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Sucursal" nillable="true" type="q44:Sucursal" />
+      <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Usuario" nillable="true" type="q45:Usuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CrearEmpresaRequest" nillable="true" type="tns:CrearEmpresaRequest" />
+  <xs:complexType name="CrearEmpresaResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IdEmpresa" type="xs:int" />
+          <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="ListadoErrores" nillable="true" type="q46:ArrayOfError" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CrearEmpresaResponse" nillable="true" type="tns:CrearEmpresaResponse" />
+  <xs:complexType name="ReenviarComprobanteRequest">
+    <xs:sequence>
+      <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Autenticacion" nillable="true" type="q47:Autenticacion" />
+      <xs:element minOccurs="0" name="Direcciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdComprobante" type="xs:int" />
+      <xs:element minOccurs="0" name="NoIncluirCC" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NoIncluirMailFacturacion" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReenviarComprobanteRequest" nillable="true" type="tns:ReenviarComprobanteRequest" />
+  <xs:complexType name="ListadoProvinciasRequest">
+    <xs:sequence>
+      <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Autenticacion" nillable="true" type="q48:Autenticacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListadoProvinciasRequest" nillable="true" type="tns:ListadoProvinciasRequest" />
+  <xs:complexType name="ListadoProvinciasResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="ListadoProvincias" nillable="true" type="q49:ArrayOfProvincia" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ListadoProvinciasResponse" nillable="true" type="tns:ListadoProvinciasResponse" />
+  <xs:complexType name="ListadoLocalidadesRequest">
+    <xs:sequence>
+      <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Autenticacion" nillable="true" type="q50:Autenticacion" />
+      <xs:element minOccurs="0" name="Provincia" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListadoLocalidadesRequest" nillable="true" type="tns:ListadoLocalidadesRequest" />
+  <xs:complexType name="ListadoLocalidadesResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="ListadoLocalidades" nillable="true" type="q51:ArrayOfLocalidad" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ListadoLocalidadesResponse" nillable="true" type="tns:ListadoLocalidadesResponse" />
+  <xs:complexType name="CrearSolicitudRequest">
+    <xs:sequence>
+      <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Autenticacion" nillable="true" type="q52:AutenticacionReseller" />
+      <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="SolicitudEmpresa" nillable="true" type="q53:SolicitudEmpresa" />
+      <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="SolicitudPV" nillable="true" type="q54:SolicitudPV" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CrearSolicitudRequest" nillable="true" type="tns:CrearSolicitudRequest" />
+  <xs:complexType name="CrearSolicitudResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Empresa" type="xs:int" />
+          <xs:element minOccurs="0" name="Hash" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Usuario" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CrearSolicitudResponse" nillable="true" type="tns:CrearSolicitudResponse" />
+  <xs:complexType name="ListadoPuntosVentaRequest">
+    <xs:sequence>
+      <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Autenticacion" nillable="true" type="q55:Autenticacion" />
+      <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="AutenticacionReseller" nillable="true" type="q56:AutenticacionReseller" />
+      <xs:element minOccurs="0" name="Empresa" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListadoPuntosVentaRequest" nillable="true" type="tns:ListadoPuntosVentaRequest" />
+  <xs:complexType name="ListadoPuntosVentaResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBaseV2">
+        <xs:sequence>
+          <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/FacturanteModel.API.DTOs" minOccurs="0" name="PuntosVenta" nillable="true" type="q57:ArrayOfPuntoVentaListado" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ListadoPuntosVentaResponse" nillable="true" type="tns:ListadoPuntosVentaResponse" />
+  <xs:complexType name="EliminarPuntoVentaRequest">
+    <xs:sequence>
+      <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Autenticacion" nillable="true" type="q58:Autenticacion" />
+      <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="AutenticacionReseller" nillable="true" type="q59:AutenticacionReseller" />
+      <xs:element minOccurs="0" name="Empresa" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Prefijo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EliminarPuntoVentaRequest" nillable="true" type="tns:EliminarPuntoVentaRequest" />
+  <xs:complexType name="CrearPuntoVentaRequest">
+    <xs:sequence>
+      <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Autenticacion" nillable="true" type="q60:Autenticacion" />
+      <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="AutenticacionReseller" nillable="true" type="q61:AutenticacionReseller" />
+      <xs:element minOccurs="0" name="Empresa" nillable="true" type="xs:int" />
+      <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/FacturanteModel.API.DTOs" minOccurs="0" name="PuntoVenta" nillable="true" type="q62:PuntoVenta" />
+      <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/FacturanteModel.API.DTOs" minOccurs="0" name="PuntoVentaMail" nillable="true" type="q63:PuntoVentaMail" />
+      <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Usuario" nillable="true" type="q64:Usuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CrearPuntoVentaRequest" nillable="true" type="tns:CrearPuntoVentaRequest" />
+  <xs:complexType name="ListadoCitiVentasRequest">
+    <xs:sequence>
+      <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Autenticacion" nillable="true" type="q65:Autenticacion" />
+      <xs:element minOccurs="0" name="FechaDesde" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaHasta" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListadoCitiVentasRequest" nillable="true" type="tns:ListadoCitiVentasRequest" />
+  <xs:complexType name="ListadoCitiVentasResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/FacturanteModel.API.DTOs" minOccurs="0" name="AlicuotasVentas" nillable="true" type="q66:Alicuotas" />
+          <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/FacturanteModel.API.DTOs" minOccurs="0" name="ComprobantesVentas" nillable="true" type="q67:Ventas" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ListadoCitiVentasResponse" nillable="true" type="tns:ListadoCitiVentasResponse" />
+  <xs:complexType name="CrearComprobanteConAdServeRequest">
+    <xs:sequence>
+      <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Autenticacion" nillable="true" type="q68:Autenticacion" />
+      <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Cliente" nillable="true" type="q69:Cliente" />
+      <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Encabezado" nillable="true" type="q70:ComprobanteEncabezado" />
+      <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="HanditAdServeItems" nillable="true" type="q71:ArrayOfHanditAdServeItem" />
+      <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Items" nillable="true" type="q72:ArrayOfComprobanteItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CrearComprobanteConAdServeRequest" nillable="true" type="tns:CrearComprobanteConAdServeRequest" />
+  <xs:complexType name="CalcularTributosRequest">
+    <xs:sequence>
+      <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Autenticacion" nillable="true" type="q73:Autenticacion" />
+      <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Emisor" nillable="true" type="q74:EmisorTributosRequest" />
+      <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Excepciones" nillable="true" type="q75:ArrayOfExcepcionTributos" />
+      <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Factura" nillable="true" type="q76:FacturaTributosRequest" />
+      <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Receptor" nillable="true" type="q77:ReceptorTributosRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CalcularTributosRequest" nillable="true" type="tns:CalcularTributosRequest" />
+  <xs:complexType name="CalcularTributosResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Factura" nillable="true" type="q78:FacturaTributosResponse" />
+          <xs:element minOccurs="0" name="IdOperacion" type="xs:int" />
+          <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CalcularTributosResponse" nillable="true" type="tns:CalcularTributosResponse" />
+  <xs:complexType name="DetalleTributosRequest">
+    <xs:sequence>
+      <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Autenticacion" nillable="true" type="q79:Autenticacion" />
+      <xs:element minOccurs="0" name="IdOperacion" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DetalleTributosRequest" nillable="true" type="tns:DetalleTributosRequest" />
+  <xs:complexType name="DetalleTributosResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBaseV2">
+        <xs:sequence>
+          <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Tributos" nillable="true" type="q80:DetalleTributo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DetalleTributosResponse" nillable="true" type="tns:DetalleTributosResponse" />
+</xs:schema>

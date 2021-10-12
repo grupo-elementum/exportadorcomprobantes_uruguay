@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/FacturanteModel.API.DTOs" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FacturanteModel.API.DTOs" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://testing.facturante.com/api/Comprobantes.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" />
+  <xs:complexType name="ArrayOfRemito">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Remito" nillable="true" type="tns:Remito" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRemito" nillable="true" type="tns:ArrayOfRemito" />
+  <xs:complexType name="Remito">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Cliente" nillable="true" type="q1:RemitoCliente" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Encabezado" nillable="true" type="q2:RemitoEncabezado" />
+      <xs:element minOccurs="0" name="EstadoAnalitico" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstadoConfirmadoRemito" type="xs:int" />
+      <xs:element minOccurs="0" name="EstadoRemito" type="xs:int" />
+      <xs:element minOccurs="0" name="IdRemito" type="xs:int" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Items" nillable="true" type="q3:ArrayOfRemitoItem" />
+      <xs:element minOccurs="0" name="Numero" type="xs:int" />
+      <xs:element minOccurs="0" name="URLPDF" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Remito" nillable="true" type="tns:Remito" />
+  <xs:complexType name="ArrayOfPuntoVentaListado">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PuntoVentaListado" nillable="true" type="tns:PuntoVentaListado" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPuntoVentaListado" nillable="true" type="tns:ArrayOfPuntoVentaListado" />
+  <xs:complexType name="PuntoVentaListado">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" minOccurs="0" name="Autenticacion" nillable="true" type="q4:Autenticacion" />
+      <xs:element minOccurs="0" name="CodigoPostal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Denominacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Direccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstadoPuntoVenta" type="xs:int" />
+      <xs:element minOccurs="0" name="Localidad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Prefijo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Provincia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Telefono" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PuntoVentaListado" nillable="true" type="tns:PuntoVentaListado" />
+  <xs:complexType name="PuntoVenta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodigoPostal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Denominacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DireccionFiscal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LeyendaComprobantes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Localidad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Prefijo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Provincia" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PuntoVenta" nillable="true" type="tns:PuntoVenta" />
+  <xs:complexType name="PuntoVentaMail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AsuntoAutomatico" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AsuntoPersonalizado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EnviarComprobante" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MensajeAutomatico" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MensajePersonalizado" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PuntoVentaMail" nillable="true" type="tns:PuntoVentaMail" />
+  <xs:complexType name="Alicuotas">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Alicuota" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Alicuotas" nillable="true" type="tns:Alicuotas" />
+  <xs:complexType name="Ventas">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Comprobante" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Ventas" nillable="true" type="tns:Ventas" />
+</xs:schema>

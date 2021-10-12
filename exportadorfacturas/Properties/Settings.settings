@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="exportadorfacturas.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Mensajes_H2O_wsfe_Servicio_Factura_Electronica_Web_ServiceService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://138.197.101.226/ws/</Value>
+    </Setting>
+    <Setting Name="exportadorfacturas_wsfe_Servicio_Factura_Electronica_Web_ServiceService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://138.197.101.226/ws/</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

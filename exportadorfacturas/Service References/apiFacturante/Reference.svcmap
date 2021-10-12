@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9054bc20-9ceb-448d-bcd9-287e61cf64e9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://testing.facturante.com/api/comprobantes.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Comprobantes.xsd" MetadataType="Schema" ID="197d1c53-386f-4b09-a293-d954ea2cbcbf" SourceId="1" SourceUrl="http://testing.facturante.com/api/Comprobantes.svc?xsd=xsd2" />
+    <MetadataFile FileName="Comprobantes.wsdl" MetadataType="Wsdl" ID="ac465c5f-c751-4d71-b7fa-95f786169387" SourceId="1" SourceUrl="http://testing.facturante.com/api/Comprobantes.svc?wsdl" />
+    <MetadataFile FileName="Comprobantes1.xsd" MetadataType="Schema" ID="149aa61b-ceaf-481d-8981-4e451e8af5b4" SourceId="1" SourceUrl="http://testing.facturante.com/api/Comprobantes.svc?xsd=xsd3" />
+    <MetadataFile FileName="Comprobantes2.xsd" MetadataType="Schema" ID="945fb873-00b0-4200-b7e5-9c657b92a164" SourceId="1" SourceUrl="http://testing.facturante.com/api/Comprobantes.svc?xsd=xsd5" />
+    <MetadataFile FileName="Comprobantes3.xsd" MetadataType="Schema" ID="27d92f33-e730-48cc-bf84-e28069227755" SourceId="1" SourceUrl="http://testing.facturante.com/api/Comprobantes.svc?xsd=xsd4" />
+    <MetadataFile FileName="Comprobantes4.xsd" MetadataType="Schema" ID="fcde2209-401d-4217-bec1-d02891532c61" SourceId="1" SourceUrl="http://testing.facturante.com/api/Comprobantes.svc?xsd=xsd0" />
+    <MetadataFile FileName="Comprobantes.disco" MetadataType="Disco" ID="7f27da9e-813b-4cf7-861c-d8c87d3ecb38" SourceId="1" SourceUrl="http://testing.facturante.com/api/Comprobantes.svc?disco" />
+    <MetadataFile FileName="Comprobantes5.xsd" MetadataType="Schema" ID="c7a86261-72a1-4de7-9727-fbf39f4ae640" SourceId="1" SourceUrl="http://testing.facturante.com/api/Comprobantes.svc?xsd=xsd6" />
+    <MetadataFile FileName="Comprobantes6.xsd" MetadataType="Schema" ID="8d758e0e-942a-4d4e-aa34-aa1abbfccae3" SourceId="1" SourceUrl="http://testing.facturante.com/api/Comprobantes.svc?xsd=xsd7" />
+    <MetadataFile FileName="Comprobantes7.xsd" MetadataType="Schema" ID="2feedb4b-7388-47c8-9470-8869010a7340" SourceId="1" SourceUrl="http://testing.facturante.com/api/Comprobantes.svc?xsd=xsd1" />
+    <MetadataFile FileName="Comprobantes1.wsdl" MetadataType="Wsdl" ID="bc1f5d15-bb1d-4443-8b64-6ce61f0702d7" SourceId="1" SourceUrl="http://testing.facturante.com/api/Comprobantes.svc?wsdl=wsdl0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

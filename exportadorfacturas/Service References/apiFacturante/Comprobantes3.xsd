@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/FacturanteModel" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FacturanteModel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://testing.facturante.com/api/Comprobantes.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:simpleType name="Constantes.CodigoRespuesta">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SinDetalle" />
+      <xs:enumeration value="ObjAutenticacionNull" />
+      <xs:enumeration value="ObjItemsNull" />
+      <xs:enumeration value="ObjClienteNull" />
+      <xs:enumeration value="UsuarioInvalido" />
+      <xs:enumeration value="NroDocumentoNull" />
+      <xs:enumeration value="DireccionFiscalNull" />
+      <xs:enumeration value="RazonSocialNull" />
+      <xs:enumeration value="PrefijoNull" />
+      <xs:enumeration value="TipoComprobanteNull" />
+      <xs:enumeration value="DetalleItemNull" />
+      <xs:enumeration value="PVInvalido" />
+      <xs:enumeration value="TipoComprobanteInvalido" />
+      <xs:enumeration value="CondicionVentaInvalido" />
+      <xs:enumeration value="FechaAbonoInvalida" />
+      <xs:enumeration value="SinItems" />
+      <xs:enumeration value="SinCreditos" />
+      <xs:enumeration value="FechaComprobanteInvalida" />
+      <xs:enumeration value="MontoTotalInvalido" />
+      <xs:enumeration value="MontoNetoInvalido" />
+      <xs:enumeration value="TipoCambioInvalido" />
+      <xs:enumeration value="MontoTotalItemInvalido" />
+      <xs:enumeration value="ComprobanteInvalido" />
+      <xs:enumeration value="SinEmails" />
+      <xs:enumeration value="DetalleItemLargo" />
+      <xs:enumeration value="NroDocumentoCero" />
+      <xs:enumeration value="CUITRepetido" />
+      <xs:enumeration value="CantComprobantesInvalido" />
+      <xs:enumeration value="MailFacturacionNull" />
+      <xs:enumeration value="MedioPagoInvalido" />
+      <xs:enumeration value="FaltaGTIN" />
+      <xs:enumeration value="ActivacionFiscalesPendiente" />
+      <xs:enumeration value="Handit_AdServeActivo" />
+      <xs:enumeration value="Handit_CantidadMaximaItemsSuperada" />
+      <xs:enumeration value="Handit_EmpresaNoConfigurada" />
+      <xs:enumeration value="Handit_ObjItemsNull" />
+      <xs:enumeration value="Handit_CampoItemInvalido" />
+      <xs:enumeration value="Handit_CampoItemLargo" />
+      <xs:enumeration value="DesglosePercepcionInvalido" />
+      <xs:enumeration value="IncotermInvalido" />
+      <xs:enumeration value="DetalleTributoInexistente" />
+      <xs:enumeration value="PaisInvalido">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">39</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ErrorInterno">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">500</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ErrorInternoSinTalonario">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">501</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Constantes.CodigoRespuesta" nillable="true" type="tns:Constantes.CodigoRespuesta" />
+  <xs:simpleType name="Constantes.EstadoRespuesta">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OK">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ERROR">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Constantes.EstadoRespuesta" nillable="true" type="tns:Constantes.EstadoRespuesta" />
+</xs:schema>

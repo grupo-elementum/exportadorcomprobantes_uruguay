@@ -1,0 +1,49 @@
+C:\proyectos\mensajero\CsNegocio\bin\Debug\CsNegocio.dll
+C:\proyectos\mensajero\CsNegocio\bin\Debug\CsNegocio.pdb
+C:\proyectos\mensajero\CsNegocio\bin\Debug\CsDatos.dll
+C:\proyectos\mensajero\CsNegocio\bin\Debug\CsDatos.pdb
+C:\proyectos\mensajero\CsNegocio\obj\Debug\CsNegocio.csprojResolveAssemblyReference.cache
+C:\proyectos\mensajero\CsNegocio\obj\Debug\CsNegocio.dll
+C:\proyectos\mensajero\CsNegocio\obj\Debug\CsNegocio.pdb
+D:\PROYECTOS\MENSAJERO\mensajero\CsNegocio\bin\Debug\CsNegocio.dll
+D:\PROYECTOS\MENSAJERO\mensajero\CsNegocio\bin\Debug\CsNegocio.pdb
+D:\PROYECTOS\MENSAJERO\mensajero\CsNegocio\bin\Debug\CsDatos.dll
+D:\PROYECTOS\MENSAJERO\mensajero\CsNegocio\bin\Debug\CsDatos.pdb
+D:\PROYECTOS\MENSAJERO\mensajero\CsNegocio\obj\Debug\CsNegocio.csprojResolveAssemblyReference.cache
+D:\PROYECTOS\MENSAJERO\mensajero\CsNegocio\obj\Debug\CsNegocio.dll
+D:\PROYECTOS\MENSAJERO\mensajero\CsNegocio\obj\Debug\CsNegocio.pdb
+C:\MENSAJERO_git\mensajero\CsNegocio\bin\Debug\CsNegocio.dll
+C:\MENSAJERO_git\mensajero\CsNegocio\bin\Debug\CsNegocio.pdb
+C:\MENSAJERO_git\mensajero\CsNegocio\bin\Debug\CsDatos.dll
+C:\MENSAJERO_git\mensajero\CsNegocio\bin\Debug\CsDatos.pdb
+C:\MENSAJERO_git\mensajero\CsNegocio\obj\Debug\CsNegocio.csprojResolveAssemblyReference.cache
+C:\MENSAJERO_git\mensajero\CsNegocio\obj\Debug\CsNegocio.dll
+C:\MENSAJERO_git\mensajero\CsNegocio\obj\Debug\CsNegocio.pdb
+C:\PROYECTOS\MENSAJERO\mensajero\CsNegocio\bin\Debug\CsNegocio.dll
+C:\PROYECTOS\MENSAJERO\mensajero\CsNegocio\bin\Debug\CsNegocio.pdb
+C:\PROYECTOS\MENSAJERO\mensajero\CsNegocio\bin\Debug\CsDatos.dll
+C:\PROYECTOS\MENSAJERO\mensajero\CsNegocio\bin\Debug\CsDatos.pdb
+C:\PROYECTOS\MENSAJERO\mensajero\CsNegocio\obj\Debug\CsNegocio.csprojResolveAssemblyReference.cache
+C:\PROYECTOS\MENSAJERO\mensajero\CsNegocio\obj\Debug\CsNegocio.dll
+C:\PROYECTOS\MENSAJERO\mensajero\CsNegocio\obj\Debug\CsNegocio.pdb
+C:\PROYECTOS\MENSAJERO\mensajero_master\mensajero\CsNegocio\bin\Debug\CsNegocio.dll
+C:\PROYECTOS\MENSAJERO\mensajero_master\mensajero\CsNegocio\bin\Debug\CsNegocio.pdb
+C:\PROYECTOS\MENSAJERO\mensajero_master\mensajero\CsNegocio\bin\Debug\CsDatos.dll
+C:\PROYECTOS\MENSAJERO\mensajero_master\mensajero\CsNegocio\bin\Debug\CsDatos.pdb
+C:\PROYECTOS\MENSAJERO\mensajero_master\mensajero\CsNegocio\obj\Debug\CsNegocio.csprojResolveAssemblyReference.cache
+C:\PROYECTOS\MENSAJERO\mensajero_master\mensajero\CsNegocio\obj\Debug\CsNegocio.dll
+C:\PROYECTOS\MENSAJERO\mensajero_master\mensajero\CsNegocio\obj\Debug\CsNegocio.pdb
+C:\PROYECTOS\EXPORTADORFACTURAS\exportadorfacturas\CsNegocio\bin\Debug\CsNegocio.dll
+C:\PROYECTOS\EXPORTADORFACTURAS\exportadorfacturas\CsNegocio\bin\Debug\CsNegocio.pdb
+C:\PROYECTOS\EXPORTADORFACTURAS\exportadorfacturas\CsNegocio\bin\Debug\CsDatos.dll
+C:\PROYECTOS\EXPORTADORFACTURAS\exportadorfacturas\CsNegocio\bin\Debug\CsDatos.pdb
+C:\PROYECTOS\EXPORTADORFACTURAS\exportadorfacturas\CsNegocio\obj\Debug\CsNegocio.csprojResolveAssemblyReference.cache
+C:\PROYECTOS\EXPORTADORFACTURAS\exportadorfacturas\CsNegocio\obj\Debug\CsNegocio.dll
+C:\PROYECTOS\EXPORTADORFACTURAS\exportadorfacturas\CsNegocio\obj\Debug\CsNegocio.pdb
+C:\PROYECTOS\EXPORTADORFACTURAS\exportadorfacturas - copia\CsNegocio\bin\Debug\CsNegocio.dll
+C:\PROYECTOS\EXPORTADORFACTURAS\exportadorfacturas - copia\CsNegocio\bin\Debug\CsNegocio.pdb
+C:\PROYECTOS\EXPORTADORFACTURAS\exportadorfacturas - copia\CsNegocio\bin\Debug\CsDatos.dll
+C:\PROYECTOS\EXPORTADORFACTURAS\exportadorfacturas - copia\CsNegocio\bin\Debug\CsDatos.pdb
+C:\PROYECTOS\EXPORTADORFACTURAS\exportadorfacturas - copia\CsNegocio\obj\Debug\CsNegocio.csprojResolveAssemblyReference.cache
+C:\PROYECTOS\EXPORTADORFACTURAS\exportadorfacturas - copia\CsNegocio\obj\Debug\CsNegocio.dll
+C:\PROYECTOS\EXPORTADORFACTURAS\exportadorfacturas - copia\CsNegocio\obj\Debug\CsNegocio.pdb

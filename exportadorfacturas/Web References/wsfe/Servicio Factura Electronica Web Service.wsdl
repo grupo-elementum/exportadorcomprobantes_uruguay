@@ -1,0 +1,1359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://example.com/sample.wsdl" name="Servicio Factura Electronica Web Service" targetNamespace="http://example.com/sample.wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" />
+  <wsdl:types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://example.com/sample.wsdl">
+      <xsd:element name="altaRapida">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="nombre" type="xsd:string" />
+            <xsd:element name="cuit" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="altaRapidaResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="empresaid" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="consultarMontoObligadoRecepcion">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="cuit_receptor" type="xsd:string" />
+            <xsd:element name="empresaid" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="consultarMontoObligadoRecepcionResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="ret" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="grabaMail">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="nombre" type="xsd:string" />
+            <xsd:element name="mail" type="xsd:string" />
+            <xsd:element name="empresaid" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="grabaMailResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="msg" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="insertaFacturaDetalle">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="importe" type="xsd:string" />
+            <xsd:element name="cantidad" type="xsd:string" />
+            <xsd:element name="ivaid" type="xsd:string" />
+            <xsd:element name="importeiva" type="xsd:string" />
+            <xsd:element name="preciounitario" type="xsd:string" />
+            <xsd:element name="descripcion" type="xsd:string" />
+            <xsd:element name="porcentajebonificacion" type="xsd:string" />
+            <xsd:element name="alicuotaiva" type="xsd:string" />
+            <xsd:element name="subtotal" type="xsd:string" />
+            <xsd:element name="empresaid" type="xsd:string" />
+            <xsd:element name="unidadmedidaid" type="xsd:string" />
+            <xsd:element name="glnproducto" type="xsd:string" />
+            <xsd:element name="importebonificacion" type="xsd:string" />
+            <xsd:element name="codigo" type="xsd:string" />
+            <xsd:element name="facturaid" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="insertaFacturaDetalleResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="msg" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="insertaFacturaEncabezado">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="localidad" type="xsd:string" />
+            <xsd:element name="letra" type="xsd:string" />
+            <xsd:element name="provinciaid" type="xsd:string" />
+            <xsd:element name="cuit" type="xsd:string" />
+            <xsd:element name="url" type="xsd:string" />
+            <xsd:element name="telefono" type="xsd:string" />
+            <xsd:element name="responsableid" type="xsd:string" />
+            <xsd:element name="conceptoid" type="xsd:string" />
+            <xsd:element name="direccion" type="xsd:string" />
+            <xsd:element name="fechafactura" type="xsd:string" />
+            <xsd:element name="documentoid" type="xsd:string" />
+            <xsd:element name="puntoventa" type="xsd:string" />
+            <xsd:element name="comprobantenro" type="xsd:string" />
+            <xsd:element name="clienteid" type="xsd:string" />
+            <xsd:element name="nombre" type="xsd:string" />
+            <xsd:element name="comprobanteid" type="xsd:string" />
+            <xsd:element name="email" type="xsd:string" />
+            <xsd:element name="empresaid" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="insertaFacturaEncabezadoResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="msg" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getDatosEmpresa">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="empresaid" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getDatosEmpresaResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="empresa" type="tns:ArrayOfgetDatosEmpresaResponseempresa" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="ArrayOfgetDatosEmpresaResponseempresa">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="sector" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="gln" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="inicioact" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="piso" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="nro" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="provinciaid" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="prestadorid" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="cuit" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="url" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="responsableid" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="manzana" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="cuponpf" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="calle" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="depto" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="torre" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="localidad" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="nombre" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="nroiibb" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="cp" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="telefono" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="testEmpresa">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="numerico" type="xsd:string" />
+            <xsd:element name="empresaid" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="testEmpresaResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="msg" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getServicios">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="empresaid" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getServiciosResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="servicios" type="tns:ArrayOfgetServiciosResponseservicios" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="ArrayOfgetServiciosResponseservicios">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="descripcion" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="nombre" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="url" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="id" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getServiciosActivos">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="empresaid" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getServiciosActivosResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="empresa" type="tns:ArrayOfgetServiciosActivosResponseempresa" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="ArrayOfgetServiciosActivosResponseempresa">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="servicioid" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="resultado" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="carpeta" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="nomserv" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="desc" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="error" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="fecha" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="produccion" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="id" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="empresaid" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAlicuotasIva">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="empresaid" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAlicuotasIvaResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="iva" type="tns:ArrayOfgetAlicuotasIvaResponseiva" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="ArrayOfgetAlicuotasIvaResponseiva">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="alicuota" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="codigo" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="id" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="solicitarCae">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="facturaid" type="xsd:string" />
+            <xsd:element name="empresaid" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="solicitarCaeResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="caeresul" type="tns:ArrayOfsolicitarCaeResponsecaeresul" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="ArrayOfsolicitarCaeResponsecaeresul">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="fecha" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="vencimiento" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="obs" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="cae" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="error" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="insertaFacturaEncabezadoNuevo">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="asociado_comprobante" type="xsd:string" />
+            <xsd:element name="letra" type="xsd:string" />
+            <xsd:element name="cuit" type="xsd:string" />
+            <xsd:element name="cbu" type="xsd:string" />
+            <xsd:element name="empresaid" type="xsd:string" />
+            <xsd:element name="asociado_cuit" type="xsd:string" />
+            <xsd:element name="asociado_nro" type="xsd:string" />
+            <xsd:element name="asociado_fechacomp" type="xsd:string" />
+            <xsd:element name="direccion" type="xsd:string" />
+            <xsd:element name="fechafactura" type="xsd:string" />
+            <xsd:element name="puntoventa" type="xsd:string" />
+            <xsd:element name="clienteid" type="xsd:string" />
+            <xsd:element name="nombre" type="xsd:string" />
+            <xsd:element name="telefono" type="xsd:string" />
+            <xsd:element name="email" type="xsd:string" />
+            <xsd:element name="frecuencia" type="xsd:string" />
+            <xsd:element name="barcode" type="xsd:string" />
+            <xsd:element name="documentoid" type="xsd:string" />
+            <xsd:element name="condicion_pago" type="xsd:string" />
+            <xsd:element name="provinciaid" type="xsd:string" />
+            <xsd:element name="url" type="xsd:string" />
+            <xsd:element name="responsableid" type="xsd:string" />
+            <xsd:element name="conceptoid" type="xsd:string" />
+            <xsd:element name="reparto" type="xsd:string" />
+            <xsd:element name="comprobantenro" type="xsd:string" />
+            <xsd:element name="localidad" type="xsd:string" />
+            <xsd:element name="comprobanteid" type="xsd:string" />
+            <xsd:element name="asociado_ptovta" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="insertaFacturaEncabezadoNuevoResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="msg" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getMails">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="empresaid" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getMailsResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="dictmail" type="tns:ArrayOfgetMailsResponsedictmail" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="ArrayOfgetMailsResponsedictmail">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="nombre" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="mail" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="id" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="empresaid" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="test">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="value" type="xsd:anyType" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="testResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="msg" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="insertaFacturaIva">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="ivaid" type="xsd:string" />
+            <xsd:element name="baseimponible" type="xsd:string" />
+            <xsd:element name="importe" type="xsd:string" />
+            <xsd:element name="facturaid" type="xsd:string" />
+            <xsd:element name="empresaid" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="insertaFacturaIvaResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="msg" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="grabaPuntoVenta">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="descripcion" type="xsd:string" />
+            <xsd:element name="puntoventastr" type="xsd:string" />
+            <xsd:element name="empresaid" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="grabaPuntoVentaResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="msg" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="enviarEmailError">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="mensaje" type="xsd:string" />
+            <xsd:element name="empresaid" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="enviarEmailErrorResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="msg" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="insertaFacturaPie">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="importetributos" type="xsd:string" />
+            <xsd:element name="importepercepcionesmunicipales" type="xsd:string" />
+            <xsd:element name="fechadesde" type="xsd:string" />
+            <xsd:element name="fechavencimientopago" type="xsd:string" />
+            <xsd:element name="tipocambio" type="xsd:string" />
+            <xsd:element name="importetotal" type="xsd:string" />
+            <xsd:element name="importenogravado" type="xsd:string" />
+            <xsd:element name="importeimpuestosinternos" type="xsd:string" />
+            <xsd:element name="codigomonedaid" type="xsd:string" />
+            <xsd:element name="importeiibb" type="xsd:string" />
+            <xsd:element name="importegravado" type="xsd:string" />
+            <xsd:element name="importeiva" type="xsd:string" />
+            <xsd:element name="importeoperacionesexentas" type="xsd:string" />
+            <xsd:element name="fechahasta" type="xsd:string" />
+            <xsd:element name="importebonificaciones" type="xsd:string" />
+            <xsd:element name="formapagoid" type="xsd:string" />
+            <xsd:element name="importepercepcionesnacionales" type="xsd:string" />
+            <xsd:element name="facturaid" type="xsd:string" />
+            <xsd:element name="empresaid" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="insertaFacturaPieResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="msg" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="insertaFacturaTributo">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="tributoid" type="xsd:string" />
+            <xsd:element name="alicuota" type="xsd:string" />
+            <xsd:element name="baseimponible" type="xsd:string" />
+            <xsd:element name="descripcion" type="xsd:string" />
+            <xsd:element name="importe" type="xsd:string" />
+            <xsd:element name="facturaid" type="xsd:string" />
+            <xsd:element name="empresaid" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="insertaFacturaTributoResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="msg" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="eliminarEmpresa">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="empresaid" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="eliminarEmpresaResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="msg" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="grabaDatosEmpresa">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="sector" type="xsd:string" />
+            <xsd:element name="gln" type="xsd:string" />
+            <xsd:element name="inicioact" type="xsd:string" />
+            <xsd:element name="piso" type="xsd:string" />
+            <xsd:element name="nro" type="xsd:string" />
+            <xsd:element name="provinciaid" type="xsd:string" />
+            <xsd:element name="prestadorid" type="xsd:string" />
+            <xsd:element name="cuit" type="xsd:string" />
+            <xsd:element name="url" type="xsd:string" />
+            <xsd:element name="responsableid" type="xsd:string" />
+            <xsd:element name="manzana" type="xsd:string" />
+            <xsd:element name="cuponpf" type="xsd:string" />
+            <xsd:element name="calle" type="xsd:string" />
+            <xsd:element name="depto" type="xsd:string" />
+            <xsd:element name="torre" type="xsd:string" />
+            <xsd:element name="localidad" type="xsd:string" />
+            <xsd:element name="nombre" type="xsd:string" />
+            <xsd:element name="nroiibb" type="xsd:string" />
+            <xsd:element name="cp" type="xsd:string" />
+            <xsd:element name="telefono" type="xsd:string" />
+            <xsd:element name="empresaid" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="grabaDatosEmpresaResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="msg" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="eliminarMail">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="idmail" type="xsd:string" />
+            <xsd:element name="empresaid" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="eliminarMailResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="msg" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ultimoNumeroFactura">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="comprobantetipo" type="xsd:string" />
+            <xsd:element name="puntoventastr" type="xsd:string" />
+            <xsd:element name="empresaid" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ultimoNumeroFacturaResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="resul" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="insertaLineaArchivo">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="nombrearchivo" type="xsd:string" />
+            <xsd:element name="linea" type="xsd:string" />
+            <xsd:element name="empresaid" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="insertaLineaArchivoResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="msg" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="grabaServicioEmpresa">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="carpetaerror" type="xsd:string" />
+            <xsd:element name="carpeta" type="xsd:string" />
+            <xsd:element name="carpetacae" type="xsd:string" />
+            <xsd:element name="produccion" type="xsd:string" />
+            <xsd:element name="servicioid" type="xsd:string" />
+            <xsd:element name="empresaid" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="grabaServicioEmpresaResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="msg" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="eliminarPuntoVenta">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="puntoventastr" type="xsd:string" />
+            <xsd:element name="empresaid" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="eliminarPuntoVentaResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="msg" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="insertaFacturaNota">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="descripcion" type="xsd:string" />
+            <xsd:element name="orden" type="xsd:string" />
+            <xsd:element name="facturaid" type="xsd:string" />
+            <xsd:element name="empresaid" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="insertaFacturaNotaResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="msg" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getPuntoVenta">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="empresaid" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getPuntoVentaResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element name="ptosvta" type="tns:ArrayOfgetPuntoVentaResponseptosvta" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="ArrayOfgetPuntoVentaResponseptosvta">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="descripcion" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="puntoventa" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="altaRapidaInput">
+    <wsdl:part name="parameters" element="tns:altaRapida" />
+  </wsdl:message>
+  <wsdl:message name="altaRapidaOutput">
+    <wsdl:part name="parameters" element="tns:altaRapidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarMontoObligadoRecepcionInput">
+    <wsdl:part name="parameters" element="tns:consultarMontoObligadoRecepcion" />
+  </wsdl:message>
+  <wsdl:message name="consultarMontoObligadoRecepcionOutput">
+    <wsdl:part name="parameters" element="tns:consultarMontoObligadoRecepcionResponse" />
+  </wsdl:message>
+  <wsdl:message name="grabaMailInput">
+    <wsdl:part name="parameters" element="tns:grabaMail" />
+  </wsdl:message>
+  <wsdl:message name="grabaMailOutput">
+    <wsdl:part name="parameters" element="tns:grabaMailResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertaFacturaDetalleInput">
+    <wsdl:part name="parameters" element="tns:insertaFacturaDetalle" />
+  </wsdl:message>
+  <wsdl:message name="insertaFacturaDetalleOutput">
+    <wsdl:part name="parameters" element="tns:insertaFacturaDetalleResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertaFacturaEncabezadoInput">
+    <wsdl:part name="parameters" element="tns:insertaFacturaEncabezado" />
+  </wsdl:message>
+  <wsdl:message name="insertaFacturaEncabezadoOutput">
+    <wsdl:part name="parameters" element="tns:insertaFacturaEncabezadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDatosEmpresaInput">
+    <wsdl:part name="parameters" element="tns:getDatosEmpresa" />
+  </wsdl:message>
+  <wsdl:message name="getDatosEmpresaOutput">
+    <wsdl:part name="parameters" element="tns:getDatosEmpresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="testEmpresaInput">
+    <wsdl:part name="parameters" element="tns:testEmpresa" />
+  </wsdl:message>
+  <wsdl:message name="testEmpresaOutput">
+    <wsdl:part name="parameters" element="tns:testEmpresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="getServiciosInput">
+    <wsdl:part name="parameters" element="tns:getServicios" />
+  </wsdl:message>
+  <wsdl:message name="getServiciosOutput">
+    <wsdl:part name="parameters" element="tns:getServiciosResponse" />
+  </wsdl:message>
+  <wsdl:message name="getServiciosActivosInput">
+    <wsdl:part name="parameters" element="tns:getServiciosActivos" />
+  </wsdl:message>
+  <wsdl:message name="getServiciosActivosOutput">
+    <wsdl:part name="parameters" element="tns:getServiciosActivosResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAlicuotasIvaInput">
+    <wsdl:part name="parameters" element="tns:getAlicuotasIva" />
+  </wsdl:message>
+  <wsdl:message name="getAlicuotasIvaOutput">
+    <wsdl:part name="parameters" element="tns:getAlicuotasIvaResponse" />
+  </wsdl:message>
+  <wsdl:message name="solicitarCaeInput">
+    <wsdl:part name="parameters" element="tns:solicitarCae" />
+  </wsdl:message>
+  <wsdl:message name="solicitarCaeOutput">
+    <wsdl:part name="parameters" element="tns:solicitarCaeResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertaFacturaEncabezadoNuevoInput">
+    <wsdl:part name="parameters" element="tns:insertaFacturaEncabezadoNuevo" />
+  </wsdl:message>
+  <wsdl:message name="insertaFacturaEncabezadoNuevoOutput">
+    <wsdl:part name="parameters" element="tns:insertaFacturaEncabezadoNuevoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getMailsInput">
+    <wsdl:part name="parameters" element="tns:getMails" />
+  </wsdl:message>
+  <wsdl:message name="getMailsOutput">
+    <wsdl:part name="parameters" element="tns:getMailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="testInput">
+    <wsdl:part name="parameters" element="tns:test" />
+  </wsdl:message>
+  <wsdl:message name="testOutput">
+    <wsdl:part name="parameters" element="tns:testResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertaFacturaIvaInput">
+    <wsdl:part name="parameters" element="tns:insertaFacturaIva" />
+  </wsdl:message>
+  <wsdl:message name="insertaFacturaIvaOutput">
+    <wsdl:part name="parameters" element="tns:insertaFacturaIvaResponse" />
+  </wsdl:message>
+  <wsdl:message name="grabaPuntoVentaInput">
+    <wsdl:part name="parameters" element="tns:grabaPuntoVenta" />
+  </wsdl:message>
+  <wsdl:message name="grabaPuntoVentaOutput">
+    <wsdl:part name="parameters" element="tns:grabaPuntoVentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="enviarEmailErrorInput">
+    <wsdl:part name="parameters" element="tns:enviarEmailError" />
+  </wsdl:message>
+  <wsdl:message name="enviarEmailErrorOutput">
+    <wsdl:part name="parameters" element="tns:enviarEmailErrorResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertaFacturaPieInput">
+    <wsdl:part name="parameters" element="tns:insertaFacturaPie" />
+  </wsdl:message>
+  <wsdl:message name="insertaFacturaPieOutput">
+    <wsdl:part name="parameters" element="tns:insertaFacturaPieResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertaFacturaTributoInput">
+    <wsdl:part name="parameters" element="tns:insertaFacturaTributo" />
+  </wsdl:message>
+  <wsdl:message name="insertaFacturaTributoOutput">
+    <wsdl:part name="parameters" element="tns:insertaFacturaTributoResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminarEmpresaInput">
+    <wsdl:part name="parameters" element="tns:eliminarEmpresa" />
+  </wsdl:message>
+  <wsdl:message name="eliminarEmpresaOutput">
+    <wsdl:part name="parameters" element="tns:eliminarEmpresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="grabaDatosEmpresaInput">
+    <wsdl:part name="parameters" element="tns:grabaDatosEmpresa" />
+  </wsdl:message>
+  <wsdl:message name="grabaDatosEmpresaOutput">
+    <wsdl:part name="parameters" element="tns:grabaDatosEmpresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminarMailInput">
+    <wsdl:part name="parameters" element="tns:eliminarMail" />
+  </wsdl:message>
+  <wsdl:message name="eliminarMailOutput">
+    <wsdl:part name="parameters" element="tns:eliminarMailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ultimoNumeroFacturaInput">
+    <wsdl:part name="parameters" element="tns:ultimoNumeroFactura" />
+  </wsdl:message>
+  <wsdl:message name="ultimoNumeroFacturaOutput">
+    <wsdl:part name="parameters" element="tns:ultimoNumeroFacturaResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertaLineaArchivoInput">
+    <wsdl:part name="parameters" element="tns:insertaLineaArchivo" />
+  </wsdl:message>
+  <wsdl:message name="insertaLineaArchivoOutput">
+    <wsdl:part name="parameters" element="tns:insertaLineaArchivoResponse" />
+  </wsdl:message>
+  <wsdl:message name="grabaServicioEmpresaInput">
+    <wsdl:part name="parameters" element="tns:grabaServicioEmpresa" />
+  </wsdl:message>
+  <wsdl:message name="grabaServicioEmpresaOutput">
+    <wsdl:part name="parameters" element="tns:grabaServicioEmpresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminarPuntoVentaInput">
+    <wsdl:part name="parameters" element="tns:eliminarPuntoVenta" />
+  </wsdl:message>
+  <wsdl:message name="eliminarPuntoVentaOutput">
+    <wsdl:part name="parameters" element="tns:eliminarPuntoVentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertaFacturaNotaInput">
+    <wsdl:part name="parameters" element="tns:insertaFacturaNota" />
+  </wsdl:message>
+  <wsdl:message name="insertaFacturaNotaOutput">
+    <wsdl:part name="parameters" element="tns:insertaFacturaNotaResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPuntoVentaInput">
+    <wsdl:part name="parameters" element="tns:getPuntoVenta" />
+  </wsdl:message>
+  <wsdl:message name="getPuntoVentaOutput">
+    <wsdl:part name="parameters" element="tns:getPuntoVentaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Servicio Factura Electronica Web ServicePortType">
+    <wsdl:operation name="altaRapida">
+      <wsdl:documentation> Reserva codigo de empresa para asociacion de CUIT en CRT
+        @requires: ninguno
+        @param cuit: string (cuit empresa sin guiones)
+        @param nombre: string (razon social empresa)
+        @return: double empresaID (unico)</wsdl:documentation>
+      <wsdl:input message="tns:altaRapidaInput" />
+      <wsdl:output message="tns:altaRapidaOutput" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarMontoObligadoRecepcion">
+      <wsdl:input message="tns:consultarMontoObligadoRecepcionInput" />
+      <wsdl:output message="tns:consultarMontoObligadoRecepcionOutput" />
+    </wsdl:operation>
+    <wsdl:operation name="grabaMail">
+      <wsdl:documentation> Actualiza los datos del mail
+        @requires: empresaID
+        @param empresaid: double
+        @param nombre: string
+        @param mail: string
+        @return: msg string </wsdl:documentation>
+      <wsdl:input message="tns:grabaMailInput" />
+      <wsdl:output message="tns:grabaMailOutput" />
+    </wsdl:operation>
+    <wsdl:operation name="insertaFacturaDetalle">
+      <wsdl:documentation> Inserta el detalle de la factura
+        @requires: empresaid,facturaid
+        @param empresaid: double
+        @param facturaid: double
+        @param codigo: string
+        @param descripcion: string
+        @param cantidad: double
+        @param unidadmedidaid: string
+        @param preciounitario: double
+        @param porcentajebonificacion: double
+        @param importebonificacion: double
+        @param subtotal: double
+        @param alicuotaiva: double
+        @param importeiva: double
+        @param glnproducto: string
+        @param importe: double
+        @param ivaid: string
+        @return: string msg (mensaje resultado) </wsdl:documentation>
+      <wsdl:input message="tns:insertaFacturaDetalleInput" />
+      <wsdl:output message="tns:insertaFacturaDetalleOutput" />
+    </wsdl:operation>
+    <wsdl:operation name="insertaFacturaEncabezado">
+      <wsdl:documentation> Inserta el encabezado de la factura
+        @requires: empresaid
+        @param empresaid: double
+        @param puntoventa: string
+        @param comprobanteid: double
+        @param comprobantenro: int
+        @param letra: string
+        @param fechafactura: datetime
+        @param cuit: string
+        @param clienteid: string
+        @param nombre: string
+        @param responsableid: double
+        @param direccion: string
+        @param localidad: string
+        @param provinciaid: double
+        @param telefono: string
+        @param email: string
+        @param url: string
+        @param conceptoid: double
+        @return: string CodigoFactura (si comienza con -1 es error) </wsdl:documentation>
+      <wsdl:input message="tns:insertaFacturaEncabezadoInput" />
+      <wsdl:output message="tns:insertaFacturaEncabezadoOutput" />
+    </wsdl:operation>
+    <wsdl:operation name="getDatosEmpresa">
+      <wsdl:documentation> Retorna los datos de la empresa
+        @requires: empresaID (Obligatorio)
+        @param empresaid: double ()
+        @return: array empresa (cuit,nombre,nroiibb,inicioact,prestadorid,responsableid,calle,nro,piso,depto,
+            cp,manzana,localidad,sector,provinciaid,torre,telefono,url,cuponpf,gln)</wsdl:documentation>
+      <wsdl:input message="tns:getDatosEmpresaInput" />
+      <wsdl:output message="tns:getDatosEmpresaOutput" />
+    </wsdl:operation>
+    <wsdl:operation name="testEmpresa">
+      <wsdl:input message="tns:testEmpresaInput" />
+      <wsdl:output message="tns:testEmpresaOutput" />
+    </wsdl:operation>
+    <wsdl:operation name="getServicios">
+      <wsdl:documentation> Devuelve servicios para configurar
+        @requires: ninguno
+        @return: list servicios </wsdl:documentation>
+      <wsdl:input message="tns:getServiciosInput" />
+      <wsdl:output message="tns:getServiciosOutput" />
+    </wsdl:operation>
+    <wsdl:operation name="getServiciosActivos">
+      <wsdl:documentation> Retorna los datos de los servicios activos en la empresa
+        @requires: empresaID (Obligatorio)
+        @param empresaid: double ()
+        @return: array servicios </wsdl:documentation>
+      <wsdl:input message="tns:getServiciosActivosInput" />
+      <wsdl:output message="tns:getServiciosActivosOutput" />
+    </wsdl:operation>
+    <wsdl:operation name="getAlicuotasIva">
+      <wsdl:documentation> Retorna los tipos de alicuota
+        @requires: empresaID (Obligatorio)
+        @param empresaid: double ()
+        @return: array empresa (id,codigo,alicuota)</wsdl:documentation>
+      <wsdl:input message="tns:getAlicuotasIvaInput" />
+      <wsdl:output message="tns:getAlicuotasIvaOutput" />
+    </wsdl:operation>
+    <wsdl:operation name="solicitarCae">
+      <wsdl:documentation> Devuelve array con datos de CAE de factura
+        @requires: empresaid, facturaid
+        @param empresaid: double
+        @param facturaid: double
+        @return: array cae (cae,fecha,vencimiento,resultado,error)</wsdl:documentation>
+      <wsdl:input message="tns:solicitarCaeInput" />
+      <wsdl:output message="tns:solicitarCaeOutput" />
+    </wsdl:operation>
+    <wsdl:operation name="insertaFacturaEncabezadoNuevo">
+      <wsdl:documentation> Inserta el encabezado de la factura
+        @requires: empresaid
+        @param empresaid: double
+        @param puntoventa: string
+        @param comprobanteid: double
+        @param comprobantenro: int
+        @param letra: string
+        @param fechafactura: datetime
+        @param cuit: string
+        @param clienteid: string
+        @param nombre: string
+        @param responsableid: double
+        @param direccion: string
+        @param localidad: string
+        @param provinciaid: double
+        @param telefono: string
+        @param email: string
+        @param url: string
+        @param conceptoid: double
+        @return: string CodigoFactura (si comienza con -1 es error) </wsdl:documentation>
+      <wsdl:input message="tns:insertaFacturaEncabezadoNuevoInput" />
+      <wsdl:output message="tns:insertaFacturaEncabezadoNuevoOutput" />
+    </wsdl:operation>
+    <wsdl:operation name="getMails">
+      <wsdl:documentation> Devuelve los emails de contacto
+        @requires: empresaID
+        @param empresaid: double
+        @return: mail array </wsdl:documentation>
+      <wsdl:input message="tns:getMailsInput" />
+      <wsdl:output message="tns:getMailsOutput" />
+    </wsdl:operation>
+    <wsdl:operation name="test">
+      <wsdl:input message="tns:testInput" />
+      <wsdl:output message="tns:testOutput" />
+    </wsdl:operation>
+    <wsdl:operation name="insertaFacturaIva">
+      <wsdl:documentation> Inserta el iva de la factura
+        @requires: empresaid, facturaid
+        @param empresaid: double
+        @param facturaid: double
+        @param ivaid: string
+        @param baseimponible: double
+        @param importe: double
+        @return: string msg (mensaje resultado) </wsdl:documentation>
+      <wsdl:input message="tns:insertaFacturaIvaInput" />
+      <wsdl:output message="tns:insertaFacturaIvaOutput" />
+    </wsdl:operation>
+    <wsdl:operation name="grabaPuntoVenta">
+      <wsdl:documentation> Agrega punto de venta para el envio de comprobantes
+        @requires: empresaID (Obligatorio)
+        @param empresaid: double
+        @param puntoventa: string (sucursal)
+        @param descripcion: string
+        @return: string msg (mensaje resultado) </wsdl:documentation>
+      <wsdl:input message="tns:grabaPuntoVentaInput" />
+      <wsdl:output message="tns:grabaPuntoVentaOutput" />
+    </wsdl:operation>
+    <wsdl:operation name="enviarEmailError">
+      <wsdl:input message="tns:enviarEmailErrorInput" />
+      <wsdl:output message="tns:enviarEmailErrorOutput" />
+    </wsdl:operation>
+    <wsdl:operation name="insertaFacturaPie">
+      <wsdl:documentation> Inserta el pie de la factura
+        @requires: empresaid,facturaid
+        @param empresaid: double
+        @param facturaid: double
+        @param importetotal: double
+        @param importenogravado: double
+        @param importegravado: double
+        @param importeiva: double
+        @param importetributos: double
+        @param importeoperacionesexentas: double
+        @param importepercepcionesnacionales: double
+        @param importeiibb: double
+        @param importepercepcionesmunicipales: double
+        @param importeimpuestosinternos: double
+        @param importebonificaciones: double
+        @param formapagoid: string
+        @param fechadesde: datetime
+        @param fechahasta: datetime
+        @param fechavencimientopago: datetime
+        @param codigomonedaid: string
+        @param tipocambio: double
+        @return: string msg (mensaje resultado) </wsdl:documentation>
+      <wsdl:input message="tns:insertaFacturaPieInput" />
+      <wsdl:output message="tns:insertaFacturaPieOutput" />
+    </wsdl:operation>
+    <wsdl:operation name="insertaFacturaTributo">
+      <wsdl:documentation> Inserta el tributo de la factura
+        @requires: empresaid, facturaid
+        @param empresaid: double
+        @param facturaid: double
+        @param tributoid: string
+        @param descripcion: string
+        @param baseimponible: double
+        @param alicuota: double
+        @param importe: double
+        @return: string msg (mensaje resultado) </wsdl:documentation>
+      <wsdl:input message="tns:insertaFacturaTributoInput" />
+      <wsdl:output message="tns:insertaFacturaTributoOutput" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarEmpresa">
+      <wsdl:documentation> Elimina la empresa (da de baja)
+        @requires: empresaid
+        @param empresaid: double
+        @return: string msg (mensaje resultado) </wsdl:documentation>
+      <wsdl:input message="tns:eliminarEmpresaInput" />
+      <wsdl:output message="tns:eliminarEmpresaOutput" />
+    </wsdl:operation>
+    <wsdl:operation name="grabaDatosEmpresa">
+      <wsdl:documentation> Actualiza los datos de la empresa
+        @requires: empresaID (Obligatorio)
+        @param empresaid: double ()
+        @param cuit: string (sin guiones)
+        @param nombre: string
+        @param nroiibb: string
+        @param inicioact: datetime (formato yyyymmdd)
+        @param prestadorid: double
+        @param responsableid: double
+        @param calle: string
+        @param nro: string
+        @param piso: string
+        @param depto: string
+        @param cp: string
+        @param manzana: string
+        @param localidad: string
+        @param sector: string
+        @param provinciaid: double
+        @param torre: string
+        @param telefono: string
+        @param url: string
+        @param cuponpf: int
+        @param gln: string
+        @return: string msg (mensaje resultado)</wsdl:documentation>
+      <wsdl:input message="tns:grabaDatosEmpresaInput" />
+      <wsdl:output message="tns:grabaDatosEmpresaOutput" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarMail">
+      <wsdl:documentation> Eliminar el email de la empresa por su id
+        @requires: empresaID
+        @param empresaid: double
+        @param id: double
+        @return: msg resultado </wsdl:documentation>
+      <wsdl:input message="tns:eliminarMailInput" />
+      <wsdl:output message="tns:eliminarMailOutput" />
+    </wsdl:operation>
+    <wsdl:operation name="ultimoNumeroFactura">
+      <wsdl:documentation> Devuelve el ultimo numero utilizado del comprobante en ese punto de venta
+        @requires: empresaid
+        @param empresaid: double
+        @param puntoventastr: string
+        @param comprobantetipo: string
+        @return: double resul (comprobante ultimo numero) </wsdl:documentation>
+      <wsdl:input message="tns:ultimoNumeroFacturaInput" />
+      <wsdl:output message="tns:ultimoNumeroFacturaOutput" />
+    </wsdl:operation>
+    <wsdl:operation name="insertaLineaArchivo">
+      <wsdl:documentation> Inserta la linea del archivo generado
+        @requires: empresaid
+        @param empresaid: double
+        @param nombrearchivo: string
+        @param linea: string
+        @return: string msg (mensaje resultado) </wsdl:documentation>
+      <wsdl:input message="tns:insertaLineaArchivoInput" />
+      <wsdl:output message="tns:insertaLineaArchivoOutput" />
+    </wsdl:operation>
+    <wsdl:operation name="grabaServicioEmpresa">
+      <wsdl:documentation> Devuelve servicios para configurar
+        @requires: empresaid, servicioid
+        @param empresaid: double
+        @param servicioid: double
+        @param carpeta: string
+        @param carpetacae: string
+        @param carpetaerror: string
+        @param produccion: int
+        @return: string msg (mensaje resultado) </wsdl:documentation>
+      <wsdl:input message="tns:grabaServicioEmpresaInput" />
+      <wsdl:output message="tns:grabaServicioEmpresaOutput" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarPuntoVenta">
+      <wsdl:documentation> Elimina punto de venta para el envio de comprobantes
+        @requires: empresaID (Obligatorio)
+        @param empresaid: double
+        @param puntoventa: string (sucursal)
+        @return: string msg (mensaje resultado) </wsdl:documentation>
+      <wsdl:input message="tns:eliminarPuntoVentaInput" />
+      <wsdl:output message="tns:eliminarPuntoVentaOutput" />
+    </wsdl:operation>
+    <wsdl:operation name="insertaFacturaNota">
+      <wsdl:documentation> Inserta la nota de pie de la factura
+        @requires: empresaid, facturaid
+        @param empresaid: double
+        @param facturaid: double
+        @param orden: int
+        @param descripcion: string
+        @return: string msg (mensaje resultado) </wsdl:documentation>
+      <wsdl:input message="tns:insertaFacturaNotaInput" />
+      <wsdl:output message="tns:insertaFacturaNotaOutput" />
+    </wsdl:operation>
+    <wsdl:operation name="getPuntoVenta">
+      <wsdl:documentation> Devuelve puntos de venta de la empresa con empresaid
+        @requires: empresaID (Obligatorio)
+        @param empresaid: double
+        @return: string msg (mensaje resultado) </wsdl:documentation>
+      <wsdl:input message="tns:getPuntoVentaInput" />
+      <wsdl:output message="tns:getPuntoVentaOutput" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Servicio Factura Electronica Web ServiceBinding" type="tns:Servicio Factura Electronica Web ServicePortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="altaRapida">
+      <soap:operation soapAction="http://138.197.101.226/ws/altaRapida" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarMontoObligadoRecepcion">
+      <soap:operation soapAction="http://138.197.101.226/ws/consultarMontoObligadoRecepcion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="grabaMail">
+      <soap:operation soapAction="http://138.197.101.226/ws/grabaMail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertaFacturaDetalle">
+      <soap:operation soapAction="http://138.197.101.226/ws/insertaFacturaDetalle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertaFacturaEncabezado">
+      <soap:operation soapAction="http://138.197.101.226/ws/insertaFacturaEncabezado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDatosEmpresa">
+      <soap:operation soapAction="http://138.197.101.226/ws/getDatosEmpresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="testEmpresa">
+      <soap:operation soapAction="http://138.197.101.226/ws/testEmpresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getServicios">
+      <soap:operation soapAction="http://138.197.101.226/ws/getServicios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getServiciosActivos">
+      <soap:operation soapAction="http://138.197.101.226/ws/getServiciosActivos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAlicuotasIva">
+      <soap:operation soapAction="http://138.197.101.226/ws/getAlicuotasIva" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="solicitarCae">
+      <soap:operation soapAction="http://138.197.101.226/ws/solicitarCae" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertaFacturaEncabezadoNuevo">
+      <soap:operation soapAction="http://138.197.101.226/ws/insertaFacturaEncabezadoNuevo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMails">
+      <soap:operation soapAction="http://138.197.101.226/ws/getMails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="test">
+      <soap:operation soapAction="http://138.197.101.226/ws/test" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertaFacturaIva">
+      <soap:operation soapAction="http://138.197.101.226/ws/insertaFacturaIva" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="grabaPuntoVenta">
+      <soap:operation soapAction="http://138.197.101.226/ws/grabaPuntoVenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="enviarEmailError">
+      <soap:operation soapAction="http://138.197.101.226/ws/enviarEmailError" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertaFacturaPie">
+      <soap:operation soapAction="http://138.197.101.226/ws/insertaFacturaPie" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertaFacturaTributo">
+      <soap:operation soapAction="http://138.197.101.226/ws/insertaFacturaTributo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarEmpresa">
+      <soap:operation soapAction="http://138.197.101.226/ws/eliminarEmpresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="grabaDatosEmpresa">
+      <soap:operation soapAction="http://138.197.101.226/ws/grabaDatosEmpresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarMail">
+      <soap:operation soapAction="http://138.197.101.226/ws/eliminarMail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ultimoNumeroFactura">
+      <soap:operation soapAction="http://138.197.101.226/ws/ultimoNumeroFactura" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertaLineaArchivo">
+      <soap:operation soapAction="http://138.197.101.226/ws/insertaLineaArchivo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="grabaServicioEmpresa">
+      <soap:operation soapAction="http://138.197.101.226/ws/grabaServicioEmpresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarPuntoVenta">
+      <soap:operation soapAction="http://138.197.101.226/ws/eliminarPuntoVenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertaFacturaNota">
+      <soap:operation soapAction="http://138.197.101.226/ws/insertaFacturaNota" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPuntoVenta">
+      <soap:operation soapAction="http://138.197.101.226/ws/getPuntoVenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Servicio Factura Electronica Web ServiceService">
+    <wsdl:documentation>
+    </wsdl:documentation>
+    <wsdl:port name="Servicio Factura Electronica Web Service" binding="tns:Servicio Factura Electronica Web ServiceBinding">
+      <soap:address location="http://138.197.101.226/ws/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

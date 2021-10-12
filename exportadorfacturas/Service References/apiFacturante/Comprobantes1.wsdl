@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.facturante.com.API" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.facturante.com.API" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.facturante.com.API/Imports">
+      <xsd:import schemaLocation="http://testing.facturante.com/api/Comprobantes.svc?xsd=xsd0" namespace="http://www.facturante.com.API" />
+      <xsd:import schemaLocation="http://testing.facturante.com/api/Comprobantes.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://testing.facturante.com/api/Comprobantes.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/FacturanteMVC.API" />
+      <xsd:import schemaLocation="http://testing.facturante.com/api/Comprobantes.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/FacturanteMVC.API.DTOs" />
+      <xsd:import schemaLocation="http://testing.facturante.com/api/Comprobantes.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/FacturanteModel" />
+      <xsd:import schemaLocation="http://testing.facturante.com/api/Comprobantes.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/FacturanteModel.API.DTOs" />
+      <xsd:import schemaLocation="http://testing.facturante.com/api/Comprobantes.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/" />
+      <xsd:import schemaLocation="http://testing.facturante.com/api/Comprobantes.svc?xsd=xsd7" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IComprobantes_ListadoComprobantes_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListadoComprobantes" />
+  </wsdl:message>
+  <wsdl:message name="IComprobantes_ListadoComprobantes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListadoComprobantesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComprobantes_ListadoComprobantesFull_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListadoComprobantesFull" />
+  </wsdl:message>
+  <wsdl:message name="IComprobantes_ListadoComprobantesFull_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListadoComprobantesFullResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComprobantes_ListadoRemitos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListadoRemitos" />
+  </wsdl:message>
+  <wsdl:message name="IComprobantes_ListadoRemitos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListadoRemitosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComprobantes_DetalleComprobante_InputMessage">
+    <wsdl:part name="parameters" element="tns:DetalleComprobante" />
+  </wsdl:message>
+  <wsdl:message name="IComprobantes_DetalleComprobante_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DetalleComprobanteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComprobantes_DetalleRemito_InputMessage">
+    <wsdl:part name="parameters" element="tns:DetalleRemito" />
+  </wsdl:message>
+  <wsdl:message name="IComprobantes_DetalleRemito_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DetalleRemitoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComprobantes_CrearComprobanteRemito_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrearComprobanteRemito" />
+  </wsdl:message>
+  <wsdl:message name="IComprobantes_CrearComprobanteRemito_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrearComprobanteRemitoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComprobantes_CrearComprobanteSinImpuestos_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrearComprobanteSinImpuestos" />
+  </wsdl:message>
+  <wsdl:message name="IComprobantes_CrearComprobanteSinImpuestos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrearComprobanteSinImpuestosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComprobantes_CrearComprobanteSinImpuestosMtx_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrearComprobanteSinImpuestosMtx" />
+  </wsdl:message>
+  <wsdl:message name="IComprobantes_CrearComprobanteSinImpuestosMtx_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrearComprobanteSinImpuestosMtxResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComprobantes_CalcularPercepciones_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalcularPercepciones" />
+  </wsdl:message>
+  <wsdl:message name="IComprobantes_CalcularPercepciones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalcularPercepcionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComprobantes_CrearComprobanteConPercepciones_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrearComprobanteConPercepciones" />
+  </wsdl:message>
+  <wsdl:message name="IComprobantes_CrearComprobanteConPercepciones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrearComprobanteConPercepcionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComprobantes_CrearComprobanteFull_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrearComprobanteFull" />
+  </wsdl:message>
+  <wsdl:message name="IComprobantes_CrearComprobanteFull_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrearComprobanteFullResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComprobantes_CrearComprobanteIdTributo_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrearComprobanteIdTributo" />
+  </wsdl:message>
+  <wsdl:message name="IComprobantes_CrearComprobanteIdTributo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrearComprobanteIdTributoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComprobantes_CrearComprobante_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrearComprobante" />
+  </wsdl:message>
+  <wsdl:message name="IComprobantes_CrearComprobante_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrearComprobanteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComprobantes_CrearEmpresa_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrearEmpresa" />
+  </wsdl:message>
+  <wsdl:message name="IComprobantes_CrearEmpresa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrearEmpresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComprobantes_ReenviarComprobante_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReenviarComprobante" />
+  </wsdl:message>
+  <wsdl:message name="IComprobantes_ReenviarComprobante_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReenviarComprobanteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComprobantes_ListadoProvincias_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListadoProvincias" />
+  </wsdl:message>
+  <wsdl:message name="IComprobantes_ListadoProvincias_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListadoProvinciasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComprobantes_ListadoLocalidades_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListadoLocalidades" />
+  </wsdl:message>
+  <wsdl:message name="IComprobantes_ListadoLocalidades_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListadoLocalidadesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComprobantes_CrearSolicitud_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrearSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="IComprobantes_CrearSolicitud_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrearSolicitudResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComprobantes_ListadoPuntosVenta_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListadoPuntosVenta" />
+  </wsdl:message>
+  <wsdl:message name="IComprobantes_ListadoPuntosVenta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListadoPuntosVentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComprobantes_EliminarPuntoVenta_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarPuntoVenta" />
+  </wsdl:message>
+  <wsdl:message name="IComprobantes_EliminarPuntoVenta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarPuntoVentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComprobantes_CrearPuntoVenta_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrearPuntoVenta" />
+  </wsdl:message>
+  <wsdl:message name="IComprobantes_CrearPuntoVenta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrearPuntoVentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComprobantes_ListadoCitiVentas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListadoCitiVentas" />
+  </wsdl:message>
+  <wsdl:message name="IComprobantes_ListadoCitiVentas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListadoCitiVentasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComprobantes_CrearComprobanteConAdServe_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrearComprobanteConAdServe" />
+  </wsdl:message>
+  <wsdl:message name="IComprobantes_CrearComprobanteConAdServe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrearComprobanteConAdServeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComprobantes_CalcularTributos_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalcularTributos" />
+  </wsdl:message>
+  <wsdl:message name="IComprobantes_CalcularTributos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalcularTributosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComprobantes_DetalleTributos_InputMessage">
+    <wsdl:part name="parameters" element="tns:DetalleTributos" />
+  </wsdl:message>
+  <wsdl:message name="IComprobantes_DetalleTributos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DetalleTributosResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IComprobantes">
+    <wsdl:operation name="ListadoComprobantes">
+      <wsdl:input wsaw:Action="http://www.facturante.com.API/IComprobantes/ListadoComprobantes" message="tns:IComprobantes_ListadoComprobantes_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.facturante.com.API/IComprobantes/ListadoComprobantesResponse" message="tns:IComprobantes_ListadoComprobantes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListadoComprobantesFull">
+      <wsdl:input wsaw:Action="http://www.facturante.com.API/IComprobantes/ListadoComprobantesFull" message="tns:IComprobantes_ListadoComprobantesFull_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.facturante.com.API/IComprobantes/ListadoComprobantesFullResponse" message="tns:IComprobantes_ListadoComprobantesFull_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListadoRemitos">
+      <wsdl:input wsaw:Action="http://www.facturante.com.API/IComprobantes/ListadoRemitos" message="tns:IComprobantes_ListadoRemitos_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.facturante.com.API/IComprobantes/ListadoRemitosResponse" message="tns:IComprobantes_ListadoRemitos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DetalleComprobante">
+      <wsdl:input wsaw:Action="http://www.facturante.com.API/IComprobantes/DetalleComprobante" message="tns:IComprobantes_DetalleComprobante_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.facturante.com.API/IComprobantes/DetalleComprobanteResponse" message="tns:IComprobantes_DetalleComprobante_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DetalleRemito">
+      <wsdl:input wsaw:Action="http://www.facturante.com.API/IComprobantes/DetalleRemito" message="tns:IComprobantes_DetalleRemito_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.facturante.com.API/IComprobantes/DetalleRemitoResponse" message="tns:IComprobantes_DetalleRemito_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearComprobanteRemito">
+      <wsdl:input wsaw:Action="http://www.facturante.com.API/IComprobantes/CrearComprobanteRemito" message="tns:IComprobantes_CrearComprobanteRemito_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.facturante.com.API/IComprobantes/CrearComprobanteRemitoResponse" message="tns:IComprobantes_CrearComprobanteRemito_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearComprobanteSinImpuestos">
+      <wsdl:input wsaw:Action="http://www.facturante.com.API/IComprobantes/CrearComprobanteSinImpuestos" message="tns:IComprobantes_CrearComprobanteSinImpuestos_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.facturante.com.API/IComprobantes/CrearComprobanteSinImpuestosResponse" message="tns:IComprobantes_CrearComprobanteSinImpuestos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearComprobanteSinImpuestosMtx">
+      <wsdl:input wsaw:Action="http://www.facturante.com.API/IComprobantes/CrearComprobanteSinImpuestosMtx" message="tns:IComprobantes_CrearComprobanteSinImpuestosMtx_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.facturante.com.API/IComprobantes/CrearComprobanteSinImpuestosMtxResponse" message="tns:IComprobantes_CrearComprobanteSinImpuestosMtx_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalcularPercepciones">
+      <wsdl:input wsaw:Action="http://www.facturante.com.API/IComprobantes/CalcularPercepciones" message="tns:IComprobantes_CalcularPercepciones_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.facturante.com.API/IComprobantes/CalcularPercepcionesResponse" message="tns:IComprobantes_CalcularPercepciones_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearComprobanteConPercepciones">
+      <wsdl:input wsaw:Action="http://www.facturante.com.API/IComprobantes/CrearComprobanteConPercepciones" message="tns:IComprobantes_CrearComprobanteConPercepciones_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.facturante.com.API/IComprobantes/CrearComprobanteConPercepcionesResponse" message="tns:IComprobantes_CrearComprobanteConPercepciones_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearComprobanteFull">
+      <wsdl:input wsaw:Action="http://www.facturante.com.API/IComprobantes/CrearComprobanteFull" message="tns:IComprobantes_CrearComprobanteFull_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.facturante.com.API/IComprobantes/CrearComprobanteFullResponse" message="tns:IComprobantes_CrearComprobanteFull_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearComprobanteIdTributo">
+      <wsdl:input wsaw:Action="http://www.facturante.com.API/IComprobantes/CrearComprobanteIdTributo" message="tns:IComprobantes_CrearComprobanteIdTributo_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.facturante.com.API/IComprobantes/CrearComprobanteIdTributoResponse" message="tns:IComprobantes_CrearComprobanteIdTributo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearComprobante">
+      <wsdl:input wsaw:Action="http://www.facturante.com.API/IComprobantes/CrearComprobante" message="tns:IComprobantes_CrearComprobante_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.facturante.com.API/IComprobantes/CrearComprobanteResponse" message="tns:IComprobantes_CrearComprobante_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearEmpresa">
+      <wsdl:input wsaw:Action="http://www.facturante.com.API/IComprobantes/CrearEmpresa" message="tns:IComprobantes_CrearEmpresa_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.facturante.com.API/IComprobantes/CrearEmpresaResponse" message="tns:IComprobantes_CrearEmpresa_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReenviarComprobante">
+      <wsdl:input wsaw:Action="http://www.facturante.com.API/IComprobantes/ReenviarComprobante" message="tns:IComprobantes_ReenviarComprobante_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.facturante.com.API/IComprobantes/ReenviarComprobanteResponse" message="tns:IComprobantes_ReenviarComprobante_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListadoProvincias">
+      <wsdl:input wsaw:Action="http://www.facturante.com.API/IComprobantes/ListadoProvincias" message="tns:IComprobantes_ListadoProvincias_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.facturante.com.API/IComprobantes/ListadoProvinciasResponse" message="tns:IComprobantes_ListadoProvincias_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListadoLocalidades">
+      <wsdl:input wsaw:Action="http://www.facturante.com.API/IComprobantes/ListadoLocalidades" message="tns:IComprobantes_ListadoLocalidades_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.facturante.com.API/IComprobantes/ListadoLocalidadesResponse" message="tns:IComprobantes_ListadoLocalidades_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearSolicitud">
+      <wsdl:input wsaw:Action="http://www.facturante.com.API/IComprobantes/CrearSolicitud" message="tns:IComprobantes_CrearSolicitud_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.facturante.com.API/IComprobantes/CrearSolicitudResponse" message="tns:IComprobantes_CrearSolicitud_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListadoPuntosVenta">
+      <wsdl:input wsaw:Action="http://www.facturante.com.API/IComprobantes/ListadoPuntosVenta" message="tns:IComprobantes_ListadoPuntosVenta_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.facturante.com.API/IComprobantes/ListadoPuntosVentaResponse" message="tns:IComprobantes_ListadoPuntosVenta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarPuntoVenta">
+      <wsdl:input wsaw:Action="http://www.facturante.com.API/IComprobantes/EliminarPuntoVenta" message="tns:IComprobantes_EliminarPuntoVenta_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.facturante.com.API/IComprobantes/EliminarPuntoVentaResponse" message="tns:IComprobantes_EliminarPuntoVenta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearPuntoVenta">
+      <wsdl:input wsaw:Action="http://www.facturante.com.API/IComprobantes/CrearPuntoVenta" message="tns:IComprobantes_CrearPuntoVenta_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.facturante.com.API/IComprobantes/CrearPuntoVentaResponse" message="tns:IComprobantes_CrearPuntoVenta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListadoCitiVentas">
+      <wsdl:input wsaw:Action="http://www.facturante.com.API/IComprobantes/ListadoCitiVentas" message="tns:IComprobantes_ListadoCitiVentas_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.facturante.com.API/IComprobantes/ListadoCitiVentasResponse" message="tns:IComprobantes_ListadoCitiVentas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearComprobanteConAdServe">
+      <wsdl:input wsaw:Action="http://www.facturante.com.API/IComprobantes/CrearComprobanteConAdServe" message="tns:IComprobantes_CrearComprobanteConAdServe_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.facturante.com.API/IComprobantes/CrearComprobanteConAdServeResponse" message="tns:IComprobantes_CrearComprobanteConAdServe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalcularTributos">
+      <wsdl:input wsaw:Action="http://www.facturante.com.API/IComprobantes/CalcularTributos" message="tns:IComprobantes_CalcularTributos_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.facturante.com.API/IComprobantes/CalcularTributosResponse" message="tns:IComprobantes_CalcularTributos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DetalleTributos">
+      <wsdl:input wsaw:Action="http://www.facturante.com.API/IComprobantes/DetalleTributos" message="tns:IComprobantes_DetalleTributos_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.facturante.com.API/IComprobantes/DetalleTributosResponse" message="tns:IComprobantes_DetalleTributos_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
